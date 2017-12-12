@@ -5,7 +5,7 @@ namespace TSP
     {
         private City[] _cities;
         private double[][] _edgesMatrix;
-        private double[][] _weightsMatrix;
+        private double[][] _oddVerteciesMatrix;
 
         public MSTWizard(City[] cities)
         {
@@ -16,10 +16,10 @@ namespace TSP
                 _edgesMatrix[i] = new double[cities.Length];
             }
 
-            _weightsMatrix = new double[cities.Length][];
+            _oddVerteciesMatrix = new double[cities.Length][];
             for(int i = 0; i < cities.Length; i++)
             {
-                _weightsMatrix[i] = new double[cities.Length];
+                _oddVerteciesMatrix[i] = new double[cities.Length];
             }
 
         }
@@ -33,8 +33,8 @@ namespace TSP
             return _edgesMatrix;
         }
 
-        public double[][] GetWeightsMatrix(){
-            return _weightsMatrix;
+        public double[][] GetOddVerticiesMatrix(){
+            return _oddVerteciesMatrix;
         }
 
 
