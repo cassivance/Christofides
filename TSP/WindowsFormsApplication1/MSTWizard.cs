@@ -20,6 +20,7 @@ namespace TSP
             for(int i = 0; i < cities.Length; i++)
             {
                 _oddVerticiesMatrix[i] = new double[cities.Length];
+
             }
 
         }

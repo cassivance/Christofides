@@ -649,8 +649,25 @@ namespace TSP
         {
             string[] results = new string[3];
 
-            // TODO: Add your implementation for your advanced solver here.
             MSTWizard mstWizard = new MSTWizard(Cities);
+            mstWizard.CreateMST();
+
+
+            /*
+             * This is a matrix of values and Infinities. mstEdgeMatrix[1][4] would be the weight at
+             * the 1st row and the 4th column, which represents the weight for an edge from city 1 to 4.
+             * If the value is not infinity, there is an edge there. If the value is Double.PositiveInfinity, there is no edge there. 
+             */
+            double[][] mstEdgeMatrix = mstWizard.GetEdgesMatrix();  
+
+
+            /*
+             * Similar to the mstEdgeMatrix in its format. If there is Double.PositiveInfinity in a single matrix,
+             * then there is no edge there. If the whole row is Double.PositiveInfinity, then that vertex (row) is not of odd degree.
+             * Only vertecies with an odd number of connected edges should have values in their respective row. 
+             */
+
+            double[][] oddVerticiesMatrix = mstWizard.GetOddVerticiesMatrix();
 
             results[COST] = "not implemented";    // load results into array here, replacing these dummy values
             results[TIME] = "-1";
