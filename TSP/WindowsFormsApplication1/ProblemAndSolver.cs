@@ -547,11 +547,100 @@ namespace TSP
         {
             string[] results = new string[3];
 
-            // TODO: Add your implementation for a greedy solver here.
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
 
-            results[COST] = "not implemented";    // load results into array here, replacing these dummy values
-            results[TIME] = "-1";
-            results[COUNT] = "-1";
+
+            ArrayList bestRoute = new ArrayList(); // the best route we have found so far
+            ArrayList route = new ArrayList(); // represents to temp route
+            List<int> visitedCities = new List<int>();
+            double cost = 0;
+            double bestCost = Double.PositiveInfinity;
+            int bestCostStartIndex = -1;
+            int solutionCount = 0;
+
+
+            // Try every starting point for the route
+            for (int beginIndex = 0; beginIndex < Cities.Length; beginIndex++) {
+
+                int sourceIndex = beginIndex; // This will be updated every time a new city is added to 'route' 
+                bool noGreedyPathExists = false;
+                route.Clear();
+                visitedCities.Clear();
+                cost = 0;
+
+                while (visitedCities.Count != Cities.Length && !noGreedyPathExists)
+                {
+                    // look for the nearest city to the sourceIndex that hasn't been visited and isn't infinity
+                    City cityA = Cities[sourceIndex];
+                    double shortestSubRoute = Double.PositiveInfinity; // represents the shortest path from source City to any neihbor
+                    int shortestDestIndex = -1;
+
+                    for (int destIndex = 0; destIndex < Cities.Length; destIndex++)
+                    {
+                        // Ignore the city if it is itself or already visited
+                        if (destIndex == sourceIndex || visitedCities.Contains(destIndex))
+                        {
+                            continue;
+                        }
+
+                        City cityB = Cities[destIndex];
+                        double path = cityA.costToGetTo(cityB);
+                        if (path < shortestSubRoute)
+                        {
+                            shortestSubRoute = path;
+                            shortestDestIndex = destIndex;
+                        }
+                    }
+
+                    if (!Double.IsInfinity(shortestSubRoute))
+                    {
+                        route.Add(Cities[shortestDestIndex]);
+                        visitedCities.Add(shortestDestIndex);
+                        cost += shortestSubRoute;
+                        sourceIndex = shortestDestIndex;
+                    } else 
+                    {
+                        noGreedyPathExists = true;
+                    }
+                }
+
+                // Check if we can complete the route by going back to the source node
+                if (visitedCities.Count == Cities.Length)
+                {
+                    City startCity = Cities[beginIndex];
+                    City lastCity = Cities[sourceIndex];
+                    double lastSubRouteCost = lastCity.costToGetTo(startCity);
+
+                    if (!Double.IsPositiveInfinity(lastSubRouteCost))
+                    {
+                        cost += lastSubRouteCost;
+                        solutionCount++;
+
+                        if (cost < bestCost)
+                        {
+                            bestCost = cost;
+                            bestCostStartIndex = beginIndex;
+                            bestRoute = route;
+                        }
+                    }
+                }
+            }
+
+            timer.Stop();
+
+            string resultsCost = "";
+
+            if (bestCostStartIndex != -1) {
+                bssf = new TSPSolution(bestRoute);
+                resultsCost = costOfBssf().ToString();
+            } else {
+                resultsCost = "No Solution";
+            }
+
+            results[COST] = resultsCost;
+            results[TIME] = timer.Elapsed.ToString();
+            results[COUNT] = solutionCount.ToString();
 
             return results;
         }

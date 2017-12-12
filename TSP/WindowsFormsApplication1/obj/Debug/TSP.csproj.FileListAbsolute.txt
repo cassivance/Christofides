@@ -19,3 +19,16 @@ F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Ca
 F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.dll
 F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.pdb
 F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.dll
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.pdb
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
