@@ -650,6 +650,7 @@ namespace TSP
             string[] results = new string[3];
 
             // TODO: Add your implementation for your advanced solver here.
+            MSTWizard mstWizard = new MSTWizard(Cities);
 
             results[COST] = "not implemented";    // load results into array here, replacing these dummy values
             results[TIME] = "-1";
