@@ -747,6 +747,7 @@ namespace TSP
             ArrayList finalPath = new ArrayList();
             while (curElement.Count > 0) {
                 finalPath.Add(curElement[0]);
+                ArrayList tempList = curElement;
                 object temp = curElement[0];
                 curElement.RemoveAt(0);
                 curElement = matches[(int)temp];

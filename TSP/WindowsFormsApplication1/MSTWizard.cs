@@ -96,10 +96,9 @@ namespace TSP
                     visitedVertices.Add(bestEdge.End);
 
                     // add the edge to the mstMatrix
-                    double forwardEdgeWeight = _edgeWeightsMatrix[bestEdge.Start][bestEdge.End];
-                    double backwardEdgeWeight = _edgeWeightsMatrix[bestEdge.End][bestEdge.Start];
-                    _mstMatrix[bestEdge.Start][bestEdge.End] = forwardEdgeWeight;
-                    _mstMatrix[bestEdge.End][bestEdge.Start] = backwardEdgeWeight;
+                    double edgeWeight = _edgeWeightsMatrix[bestEdge.Start][bestEdge.End];
+                    _mstMatrix[bestEdge.Start][bestEdge.End] = edgeWeight;
+                    _mstMatrix[bestEdge.End][bestEdge.Start] = edgeWeight;
 
                     // add the new possible edges to the priority queue
                     int newEdgeStart = bestEdge.End;
@@ -239,10 +238,6 @@ namespace TSP
 
 
         }
-
-
-    }
-}
 
 
     }
