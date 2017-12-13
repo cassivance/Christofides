@@ -32,3 +32,15 @@ F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.CoreCompileInputs.cache
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.dll
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.pdb
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csprojResolveAssemblyReference.cache
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache

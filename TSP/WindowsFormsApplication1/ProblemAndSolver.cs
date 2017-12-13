@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Diagnostics;
 using Priority_Queue;
-
+using System.Linq;
 
 namespace TSP
 {
@@ -645,9 +645,125 @@ namespace TSP
             return results;
         }
 
+        public void nodesMatched(int node1, int node2, double[][] oddVerticiesMatrix)
+        {
+            for (int i = 0; i < Cities.Count(); i++)
+            {
+                oddVerticiesMatrix[node1][i] = double.PositiveInfinity;
+                oddVerticiesMatrix[node2][i] = double.PositiveInfinity;
+                oddVerticiesMatrix[i][node1] = double.PositiveInfinity;
+                oddVerticiesMatrix[i][node2] = double.PositiveInfinity;
+            }
+        }
+
+        //Returns a pretty good perfect match set from the odd edge vertices
+        public Dictionary<int, ArrayList> getPerfectMatches(double[][] oddVerticiesMatrix)
+        {
+            Dictionary<int, ArrayList> matches = new Dictionary<int, ArrayList>();
+            int i;
+            bool added = true;
+            while (added == true)
+            {
+                bool changed = true;
+                while (changed == true)
+                {
+                    changed = false;
+                    for (i = 0; i < Cities.Count(); i++)
+                    {
+                        int numTraversed = oddVerticiesMatrix[i].Where(x => x == double.PositiveInfinity).Count();
+                        if (numTraversed == (oddVerticiesMatrix.Length - 1))
+                        {
+                            ArrayList destinationNodes = new ArrayList();
+                            int destinationIndex = Array.IndexOf(oddVerticiesMatrix[i], oddVerticiesMatrix[i].Min());
+                            destinationNodes.Add(destinationIndex);
+                            matches.Add(i, destinationNodes);
+
+                            ArrayList reversePath = new ArrayList();
+                            reversePath.Add(i);
+                            matches.Add(destinationIndex, reversePath);
+
+                            nodesMatched(i, destinationIndex, oddVerticiesMatrix);
+                            changed = true;
+                        }
+                    }
+                }
+
+                added = false;
+                i = 0;
+                while (added == false && i < Cities.Count())
+                {
+                    double min = oddVerticiesMatrix[i].Min();
+                    if (min < double.PositiveInfinity)
+                    {
+                        ArrayList destinationNodes = new ArrayList();
+                        int destinationIndex = Array.IndexOf(oddVerticiesMatrix[i], oddVerticiesMatrix[i].Min());
+                        destinationNodes.Add(destinationIndex);
+                        matches.Add(i, destinationNodes);
+
+                        ArrayList reversePath = new ArrayList();
+                        reversePath.Add(i);
+                        matches.Add(destinationIndex, reversePath);
+                        
+                        nodesMatched(i, destinationIndex, oddVerticiesMatrix);
+                        added = true;
+                    }
+                    i++;
+                }
+            }
+            return matches;
+        }
+
+        public Dictionary<int, ArrayList> combineMSTandOdds(double[][] mstEdgeMatrix, Dictionary<int, ArrayList> matches)
+        {
+            for(int i = 0; i < Cities.Count(); i++)
+            {
+                for(int j = 0; j < Cities.Count(); j++)
+                {
+                    if (mstEdgeMatrix[i][j] != double.PositiveInfinity)
+                    {
+                        if (matches.ContainsKey(i))
+                        {
+                            matches[i].Add(j);
+                        }
+                        else
+                        {
+                            ArrayList destinationNodes = new ArrayList();
+                            destinationNodes.Add(j);
+                            matches.Add(i, destinationNodes);
+                        }
+                        if (matches.ContainsKey(j))
+                        {
+                            matches[j].Add(i);
+                        }
+                        else
+                        {
+                            ArrayList destinationNodes = new ArrayList();
+                            destinationNodes.Add(i);
+                            matches.Add(j, destinationNodes);
+                        }
+                    }
+                }
+            }
+            return matches;
+        }
+
+        public ArrayList findPath(ArrayList curElement, Dictionary<int, ArrayList> matches) {
+            ArrayList finalPath = new ArrayList();
+            while (curElement.Count > 0) {
+                finalPath.Add(curElement[0]);
+                object temp = curElement[0];
+                curElement.RemoveAt(0);
+                curElement = matches[(int)temp];
+            }
+            return finalPath;
+        }
+
         public string[] fancySolveProblem()
         {
             string[] results = new string[3];
+            Stopwatch timer = new Stopwatch();
+
+            timer.Start();
 
             MSTWizard mstWizard = new MSTWizard(Cities);
             mstWizard.CreateMST();
@@ -660,7 +776,6 @@ namespace TSP
              */
             double[][] mstEdgeMatrix = mstWizard.GetEdgesMatrix();  
 
-
             /*
              * Similar to the mstEdgeMatrix in its format. If there is Double.PositiveInfinity in a single matrix,
              * then there is no edge there. If the whole row is Double.PositiveInfinity, then that vertex (row) is not of odd degree.
@@ -669,9 +784,59 @@ namespace TSP
 
             double[][] oddVerticiesMatrix = mstWizard.GetOddVerticiesMatrix();
 
-            results[COST] = "not implemented";    // load results into array here, replacing these dummy values
-            results[TIME] = "-1";
-            results[COUNT] = "-1";
+            Dictionary<int, ArrayList> matches = getPerfectMatches(oddVerticiesMatrix);
+
+            matches = combineMSTandOdds(mstEdgeMatrix, matches);
+
+
+
+            ArrayList curElement = matches[0];
+            ArrayList finalPath = findPath(curElement, matches);
+            bool finished = false;
+            while (finished == false) {
+                ArrayList possibleStarts = new ArrayList();
+                for (int i = 0; i < finalPath.Count; i++)
+                {
+                    if (matches[(int)finalPath[i]].Count != 0)
+                    {
+                        possibleStarts.Add((int)finalPath[i]);
+                    }
+                }
+
+                if (possibleStarts.Count > 0)
+                {
+                    ArrayList tempPath = new ArrayList();
+                    for (int i = 0; i < finalPath.Count; i++)
+                    {
+                        int startIndex = finalPath.IndexOf(possibleStarts[0]) + 1;
+                        tempPath.Add(finalPath[(i + startIndex) % finalPath.Count]);
+                    }
+                    finalPath = tempPath;
+
+                    ArrayList addToFinal = findPath(matches[(int)possibleStarts[0]], matches);
+                    for (int i = 0; i < addToFinal.Count; i++)
+                    {
+                        finalPath.Add(addToFinal[i]);
+                    }
+                }
+
+                else
+                {
+                    finished = true;
+                }
+              }
+            ArrayList cityList = new ArrayList();
+            for (int i = 0; i < finalPath.Count; i++)
+            {
+                cityList.Add(Cities[(int)finalPath[i]]);
+            }
+            bssf = new TSPSolution(cityList);
+
+            timer.Stop();
+
+            results[COST] = costOfBssf().ToString();                          // load results array
+            results[TIME] = timer.Elapsed.ToString();
+            results[COUNT] = "null";
 
             return results;
         }
