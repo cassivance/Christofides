@@ -194,6 +194,7 @@ namespace TSP
 
             double[][] oddVerticiesMatrix = new double[_cities.Length][];
             double[] infinityRow = new double[_cities.Length];
+            ArrayList evenVertecies = new ArrayList();
 
             for (int i = 0; i < _cities.Length; i++)
             {
@@ -215,6 +216,7 @@ namespace TSP
                 if (edgeCount % 2 == 0)
                 {
                     oddVerticiesMatrix[row] = infinityRow;
+                    evenVertecies.Add(row);
                 }
                 else
                 {
@@ -222,10 +224,25 @@ namespace TSP
                 }
             }
 
+            for (int i = 0; i < _cities.Length; i++)
+            {
+                for (int j = 0; j < _cities.Length; j++)
+                {
+                    if (evenVertecies.Contains((object)j))
+                    {
+                        oddVerticiesMatrix[i][j] = double.PositiveInfinity;
+                    }
+                }
+            }
+
             return oddVerticiesMatrix;
 
 
         }
+
+
+    }
+}
 
 
     }

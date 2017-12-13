@@ -716,15 +716,18 @@ namespace TSP
 
         public Dictionary<int, ArrayList> combineMSTandOdds(double[][] mstEdgeMatrix, Dictionary<int, ArrayList> matches)
         {
-            for(int i = 0; i < Cities.Count(); i++)
+            for (int i = 0; i < Cities.Count(); i++)
             {
-                for(int j = 0; j < Cities.Count(); j++)
+                for (int j = 0; j < Cities.Count(); j++)
                 {
                     if (mstEdgeMatrix[i][j] != double.PositiveInfinity)
                     {
                         if (matches.ContainsKey(i))
                         {
-                            matches[i].Add(j);
+                            if (!matches[i].Contains((object)j))
+                            {
+                                matches[i].Add(j);
+                            }
                         }
                         else
                         {
@@ -732,21 +735,13 @@ namespace TSP
                             destinationNodes.Add(j);
                             matches.Add(i, destinationNodes);
                         }
-                        if (matches.ContainsKey(j))
-                        {
-                            matches[j].Add(i);
-                        }
-                        else
-                        {
-                            ArrayList destinationNodes = new ArrayList();
-                            destinationNodes.Add(i);
-                            matches.Add(j, destinationNodes);
-                        }
                     }
                 }
             }
             return matches;
         }
+
+
 
         public ArrayList findPath(ArrayList curElement, Dictionary<int, ArrayList> matches) {
             ArrayList finalPath = new ArrayList();
@@ -852,6 +847,8 @@ namespace TSP
                 }
               }
 
+
+
             ArrayList tempList = new ArrayList();
             tempList = turnHamiltonian(finalPath);
 
@@ -861,19 +858,29 @@ namespace TSP
                 cityList.Add(Cities[(int)tempList[i]]);
             }
             bssf = new TSPSolution(cityList);
+            double firstBssfCost = costOfBssf();
 
+            ArrayList secondTempList = new ArrayList();
 
-            if(costOfBssf() == double.PositiveInfinity)
+            secondTempList = turnHamiltonianReverse(finalPath);
+
+            cityList.Clear();
+            for (int i = 0; i < tempList.Count; i++)
             {
-                tempList = turnHamiltonianReverse(finalPath);
+                cityList.Add(Cities[(int)tempList[i]]);
+            }
+            bssf = new TSPSolution(cityList);
+            double secondBssfCost = costOfBssf();
 
-                cityList.Clear();
+            if (firstBssfCost < secondBssfCost)
+            {
                 for (int i = 0; i < tempList.Count; i++)
                 {
                     cityList.Add(Cities[(int)tempList[i]]);
                 }
                 bssf = new TSPSolution(cityList);
             }
+
 
             timer.Stop();
 
