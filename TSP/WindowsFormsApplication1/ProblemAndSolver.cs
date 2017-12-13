@@ -785,7 +785,7 @@ namespace TSP
 
             Dictionary<int, ArrayList> matches = getPerfectMatches(oddVerticiesMatrix);
 
-            matches = combineMSTandOdds(mstEdgeMatrix, matches);
+            matches = combineMSTandOdds(mstMatrix, matches);
 
 
 
