@@ -459,7 +459,8 @@ namespace TSP
             priorityQueue.Enqueue(parentNode, getPriority(parentNode));
 
             //expand nodes
-            while (priorityQueue.Count != 0 && timer.ElapsedMilliseconds < (TIME_LIMIT * 1000))
+            while (priorityQueue.Count != 0)
+                //&& timer.ElapsedMilliseconds < (TIME_LIMIT * 1000))
             {
                 PathNode currentNode = priorityQueue.Dequeue();
                 if(currentNode.getDepth() != Cities.Length && currentNode.getLowerBound() < costOfBssf()) {
@@ -758,6 +759,32 @@ namespace TSP
             return finalPath;
         }
 
+        public ArrayList turnHamiltonian(ArrayList finalPath)
+        {
+            ArrayList hamiltonian = new ArrayList();
+            for (int i = 0; i < finalPath.Count; i++)
+            {
+                if (!hamiltonian.Contains(finalPath[i]))
+                {
+                    hamiltonian.Add(finalPath[i]);
+                }
+            }
+            return hamiltonian;
+        }
+
+        public ArrayList turnHamiltonianReverse(ArrayList finalPath)
+        {
+            ArrayList hamiltonian = new ArrayList();
+            for (int i = finalPath.Count - 1; i > 0; i--)
+            {
+                if (!hamiltonian.Contains(finalPath[i]))
+                {
+                    hamiltonian.Add(finalPath[i]);
+                }
+            }
+            return hamiltonian;
+        }
+
         public string[] fancySolveProblem()
         {
             string[] results = new string[3];
@@ -824,12 +851,29 @@ namespace TSP
                     finished = true;
                 }
               }
+
+            ArrayList tempList = new ArrayList();
+            tempList = turnHamiltonian(finalPath);
+
             ArrayList cityList = new ArrayList();
-            for (int i = 0; i < finalPath.Count; i++)
+            for (int i = 0; i < tempList.Count; i++)
             {
-                cityList.Add(Cities[(int)finalPath[i]]);
+                cityList.Add(Cities[(int)tempList[i]]);
             }
             bssf = new TSPSolution(cityList);
+
+
+            if(costOfBssf() == double.PositiveInfinity)
+            {
+                tempList = turnHamiltonianReverse(finalPath);
+
+                cityList.Clear();
+                for (int i = 0; i < tempList.Count; i++)
+                {
+                    cityList.Add(Cities[(int)tempList[i]]);
+                }
+                bssf = new TSPSolution(cityList);
+            }
 
             timer.Stop();
 

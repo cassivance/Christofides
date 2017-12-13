@@ -1,6 +1,8 @@
 ﻿using System;
 using Priority_Queue;
 using System.Collections.Generic;
+using System.Collections;
+
 namespace TSP
 {
     struct Edge {
@@ -185,7 +187,9 @@ namespace TSP
         /*
          * Returns a matrix with the mstRows with odd degree infinitied out
          */
-        public double[][] GetOddVerticiesMatrix(){
+
+        public double[][] GetOddVerticiesMatrix()
+        {
 
             double[][] oddVerticiesMatrix = new double[_cities.Length][];
             double[] infinityRow = new double[_cities.Length];
@@ -210,8 +214,10 @@ namespace TSP
                 if (edgeCount % 2 == 0)
                 {
                     oddVerticiesMatrix[row] = infinityRow;
-                } else {
-                    oddVerticiesMatrix[row] = _mstMatrix[row];
+                }
+                else
+                {
+                    oddVerticiesMatrix[row] = _edgeWeightsMatrix[row];
                 }
             }
 
@@ -219,8 +225,6 @@ namespace TSP
 
 
         }
-
-      
 
 
     }
