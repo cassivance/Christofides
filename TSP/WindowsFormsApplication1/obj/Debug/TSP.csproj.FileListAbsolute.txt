@@ -1,24 +1,37 @@
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.csprojResolveAssemblyReference.cache
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Dan\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.csprojResolveAssemblyReference.cache
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-F:\Desktop\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.dll
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.pdb
-F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe.config
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.csprojResolveAssemblyReference.cache
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.mainform.resources
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.Properties.Resources.resources
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.csproj.GenerateResource.Cache
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe
+C:/Users/Dan/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.pdb
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe.config
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.exe
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/WindowsFormsApplication1.pdb
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.csprojResolveAssemblyReference.cache
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.mainform.resources
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.Properties.Resources.resources
+F:/Desktop/TSP/WindowsFormsApplication1/obj/Debug/TSP.csproj.GenerateResource.Cache
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/Priority Queue.dll
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/Priority Queue.pdb
+F:/Desktop/TSP/WindowsFormsApplication1/bin/Debug/Priority Queue.xml
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/TSP.csprojResolveAssemblyReference.cache
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/TSP.mainform.resources
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.Properties.Resources.resources
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/TSP.csproj.GenerateResource.Cache
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/TSP.csproj.CoreCompileInputs.cache
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.exe
+/Users/tyudy/Desktop/Christofides/TSP/WindowsFormsApplication1/obj/Debug/WindowsFormsApplication1.pdb
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
@@ -26,9 +39,3 @@ F:\Desktop\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.pdb
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\bin\Debug\Priority Queue.xml
 \\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csprojResolveAssemblyReference.cache
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.mainform.resources
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.GenerateResource.Cache
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\TSP.csproj.CoreCompileInputs.cache
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-\\Mac\Home\Desktop\Christofides\TSP\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
